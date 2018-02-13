@@ -25,7 +25,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
 
         iv=findViewById(R.id.imageView);
-        iv.setBackground(getResources().getDrawable(R.drawable.flagnew));
+        iv.setBackground(getResources().getDrawable(R.drawable.flag));
 
         id=findViewById(R.id.loginName);
         pass=findViewById(R.id.password);
