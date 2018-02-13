@@ -48,41 +48,61 @@ public class ListItemActivity extends Activity {
         });
 
 
-        CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
+        Switch sw = (Switch)  findViewById(R.id.switch1);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-                CharSequence text = "Switch is On";// "Switch is Off"
-                int duration = Toast.LENGTH_SHORT; //= Toast.LENGTH_LONG if Off
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //Log.v("Switch State=on", "Switch is ON"+isChecked);
+               if(isChecked)
+               {
+                CharSequence text = "Switch is On";
+                int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(getApplicationContext(), text, duration); //this is the ListActivity
                 toast.show(); //display your message box
             }
-        };
+            else
+            {
+                CharSequence text = "Switch is OFF";
+                int duration = Toast.LENGTH_LONG;
+
+                Toast toast = Toast.makeText(getApplicationContext(), text, duration); //this is the ListActivity
+                toast.show(); //display your message box
+            }
+
+        }});
 
         cBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListItemActivity.this);
-// 2. Chain together various setter methods to set the dialog characteristics
-                builder.setMessage(R.string.dialog_message); //Add a dialog message to strings.xml
 
                 builder.setTitle(R.string.dialog_title);
+                builder.setMessage(R.string.dialog_message); //Add a dialog message to strings.xml
+
+
                 builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent resultIntent = new Intent();
+                        Intent resultIntent = new Intent(ListItemActivity.this, StartActivity.class);
+                        CharSequence text = getResources().getString(R.string.Response);
+                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
                         resultIntent.putExtra("Response", "Here is my response");
                         setResult(Activity.RESULT_OK, resultIntent);
                         finish();
 
                     }
                 });
-                builder.setNegativeButton(R.string.CheckBox, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // User cancelled the dialog
+                builder.setNegativeButton(R.string.Notok, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id){
+                        Intent resultIntent = new Intent();
+                        CharSequence text = getResources().getString(R.string.Response);
+                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+                        resultIntent.putExtra("Response", "Here is my response");
+                        setResult(Activity.RESULT_OK, resultIntent);
+                        finish();
                     }
-                });
+                        });
                 builder.show();
 
             }
