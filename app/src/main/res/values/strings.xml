@@ -5,11 +5,15 @@
     <string name="password">Password</string>
     <string name="ButtonText">I’m a button</string>
     <string name="RadioButton">Radio Button</string>
-    <string name="CheckBox">Checkbox</string>
-    <string name="what_does">What does this do?</string>
+    <string name="CheckBox">No</string>
+    <string name="checkBox2">CheckBox</string>
+    <string name="switch1">What does this do?</string>
     <string name="loginbtn">LOGIN</string>
-    <string name="dialog_message">Choose any one</string>
+    <string name="dialog_message">Do you want to exit?</string>
     <string name="dialog_title">Welcome</string>
-    <string name="ok">Positive Button</string>
+    <string name="ok">Yes</string>
+    <string name="Notok">No</string>
     <string name="content_description">imageview</string>
+    <string name="Response">Here is my response</string>
+    <string name="startchat">Start Chat</string>
 </resources>

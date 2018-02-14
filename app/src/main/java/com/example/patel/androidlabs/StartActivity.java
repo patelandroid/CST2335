@@ -21,27 +21,25 @@ public class StartActivity extends Activity {
 
         Button button2 = (Button) findViewById(R.id.button);
 
-
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                final Intent intent = new Intent(StartActivity.this, LoginActivity.class);
+                final Intent intent = new Intent(StartActivity.this, ListItemActivity.class);
                 startActivity(intent);
                 startActivityForResult(intent, 50);
 
-//                onActivityResult(int requestCode, int resultCode, Intent data){
-//                    if (requestCode == 50) {
-//                        Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
-//                    }
-//
-//                    if (resultCode = ListItemActivity.RESULT_OK) {
-//                        String messagePassed = data.getStringExtra("Response");
-//                    }
-//                }
-
             }
         });
+
+//        Button chatbutton = (Button)findViewById(R.id.chatbutton);
+//
+//        chatbutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.i(ACTIVITY_NAME, "User clicked start chat");
+//            }
+//        });
 
 
     }

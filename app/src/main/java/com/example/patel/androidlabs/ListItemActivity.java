@@ -89,6 +89,7 @@ public class ListItemActivity extends Activity {
                         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
                         resultIntent.putExtra("Response", "Here is my response");
                         setResult(Activity.RESULT_OK, resultIntent);
+                        startActivity(resultIntent);
                         finish();
 
                     }
